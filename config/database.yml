@@ -1,0 +1,23 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: bangar
+  password: dinesh123
+  host: localhost
+  pool: 40
+  timeout: 5000
+
+development:
+  <<: *default
+  database: my_library
+  template: template1
+
+production:
+  <<: *default
+  username: test
+  password: test   
+  database: my_app_development_production
+  # username: quodeck-2_0_1
+  # password: <%= ENV['QUODECK-2_0_1_DATABASE_PASSWORD'] %>
